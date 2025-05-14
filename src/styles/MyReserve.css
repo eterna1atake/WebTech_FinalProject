@@ -1,0 +1,222 @@
+/* MyReserve.css - สไตล์ที่อัปเดตสำหรับหน้าประวัติการจอง */
+
+/* ==================== วาริเอเบิลสี ==================== */
+:root {
+  --primary: #8B1D1D;  /* จากสีแดงเข้มในรูปภาพ */
+  --primary-light: #a83030;
+  --primary-dark: #6a1717;
+  --secondary: #f5f5f5;
+  --accent: #FFD700;
+  --text-light: #ffffff;
+  --text-dark: #333333;
+  --gray-light: #eaeaea;
+  --gray-medium: #cccccc;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --status-reserved: #FF8C00;
+  --status-confirmed: #28a745;
+  --status-cancelled: #dc3545;
+}
+
+/* ==================== สไตล์พื้นฐาน ==================== */
+.container-fluid {
+  font-family: 'Prompt', sans-serif;
+  padding: 0;
+  background-color: var(--secondary);
+  min-height: 100vh;
+}
+
+/* ==================== ส่วนหัว ==================== */
+.historyReserve {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: var(--text-light);
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 4px 15px var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.historyReserve::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><rect fill="rgba(255,255,255,0.05)" width="50" height="50"/><rect fill="rgba(255,255,255,0.05)" x="50" y="50" width="50" height="50"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.historyReserve p {
+  font-size: 1.2rem;
+  margin: 0;
+  font-weight: 300;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 1;
+}
+
+.historyReserve h3 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==================== ตาราง ==================== */
+.table {
+  padding: 0 1rem;
+}
+
+.tableHistory {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+/* ==================== การ์ดการจอง ==================== */
+.reserve-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px var(--shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border-top: 5px solid var(--primary);
+}
+
+.reserve-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.reserve-card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-light);
+  opacity: 0.05;
+  border-radius: 50%;
+  bottom: -50px;
+  right: -50px;
+}
+
+.reserve-card h4 {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px dashed var(--gray-light);
+  padding-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.reserve-card p {
+  margin: 0.7rem 0;
+  display: flex;
+  align-items: center;
+  color: var(--text-dark);
+  font-size: 1rem;
+}
+
+.reserve-card p::before {
+  content: "•";
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  line-height: 0;
+}
+
+/* สร้างสถานะแต่ละประเภท */
+.reserve-card p:last-child {
+  margin-top: 1.2rem;
+  background-color: var(--gray-light);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+/* สีสถานะต่างๆ */
+.reserve-card p:last-child:has(.status-reserved),
+.reserve-card p:last-child:contains("สถานะ: reserved") {
+  background-color: rgba(255, 140, 0, 0.1);
+  color: var(--status-reserved);
+}
+
+.reserve-card p:last-child:has(.status-confirmed),
+.reserve-card p:last-child:contains("สถานะ: confirmed") {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: var(--status-confirmed);
+}
+
+.reserve-card p:last-child:has(.status-cancelled),
+.reserve-card p:last-child:contains("สถานะ: cancelled") {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: var(--status-cancelled);
+}
+
+/* ==================== ไม่มีการจอง ==================== */
+.no-reservations {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray-medium);
+  font-size: 1.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.no-reservations::before {
+  content: "📅";
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* ==================== รองรับการแสดงผลบนอุปกรณ์ต่างๆ ==================== */
+@media (max-width: 768px) {
+  .historyReserve {
+    padding: 2rem 1rem;
+  }
+  
+  .historyReserve h3 {
+    font-size: 2rem;
+  }
+  
+  .tableHistory {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==================== เอฟเฟคเคลื่อนไหว ==================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tableHistory {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.reserve-card {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.reserve-card:nth-child(1) { animation-delay: 0.1s; }
+.reserve-card:nth-child(2) { animation-delay: 0.2s; }
+.reserve-card:nth-child(3) { animation-delay: 0.3s; }
+.reserve-card:nth-child(4) { animation-delay: 0.4s; }
+.reserve-card:nth-child(5) { animation-delay: 0.5s; }

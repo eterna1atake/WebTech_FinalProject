@@ -1,0 +1,133 @@
+/* PageNotFound.css */
+.main-404 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background: url('../images/bg.jpg') center;
+  background-size: cover;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  overflow: hidden;
+}
+
+.main-404::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(121, 36, 36, 0.85);
+  z-index: 1;
+}
+
+.main-404 * {
+  position: relative;
+  z-index: 2;
+}
+
+.main-404 h1 {
+  font-size: 12rem;
+  margin: 0;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), 
+               0 0 30px rgba(255, 255, 255, 0.3);
+  font-weight: 900;
+  letter-spacing: -5px;
+  animation: pulse 2s infinite;
+}
+
+.main-404 h2 {
+  font-size: 3rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.main-404 p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.back-home-btn {
+  background-color: #5c1414;
+  color: white;
+  border: 2px solid #ffffff;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.back-home-btn:hover {
+  background-color: #8b2424;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.back-home-btn:active {
+  transform: translateY(1px);
+}
+
+.back-home-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.back-home-btn:hover::after {
+  left: 100%;
+}
+
+/* ลูกเล่นพิเศษ: พาร์ติเคิล */
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .main-404 h1 {
+    font-size: 8rem;
+  }
+  
+  .main-404 h2 {
+    font-size: 2rem;
+  }
+}

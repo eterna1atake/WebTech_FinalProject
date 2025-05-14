@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.baf12acf.css",
+    "main.js": "/static/js/main.d990d855.js",
+    "static/media/COM EDU Reunion 2025.mp4": "/static/media/COM EDU Reunion 2025.5886663a1c9622816bd7.mp4",
+    "static/media/edu1.jpg": "/static/media/edu1.5359fd5a32136ecc8b4a.jpg",
+    "static/media/Schedule.jpg": "/static/media/Schedule.4787f88214cd657efc7f.jpg",
+    "static/media/IMG_2943.jpg": "/static/media/IMG_2943.bb7986ce8bcfc59685d7.jpg",
+    "static/media/IMG_2944.jpg": "/static/media/IMG_2944.559b3ffa415ff2cd4451.jpg",
+    "static/media/IMG_2931.jpg": "/static/media/IMG_2931.d983f0f4ee9f58924053.jpg",
+    "static/media/IMG_2930.jpg": "/static/media/IMG_2930.936e830dede75ed6d6d1.jpg",
+    "static/media/IMG_2945.jpg": "/static/media/IMG_2945.347ff05bcd9826846961.jpg",
+    "static/media/qr.jpg": "/static/media/qr.1e7baa15d7f1abcdfe1b.jpg",
+    "static/media/bg.jpg": "/static/media/bg.18f5acfec9adfc51366c.jpg",
+    "index.html": "/index.html",
+    "main.baf12acf.css.map": "/static/css/main.baf12acf.css.map",
+    "main.d990d855.js.map": "/static/js/main.d990d855.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.baf12acf.css",
+    "static/js/main.d990d855.js"
+  ]
+}

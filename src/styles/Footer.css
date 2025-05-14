@@ -1,0 +1,188 @@
+/* นำเข้าฟอนต์ Kanit สำหรับรองรับภาษาไทย */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
+/* สไตล์หลักของ Footer */
+.footer {
+  background: linear-gradient(to bottom, #641616, #400a0a);
+  color: #ffffff;
+  padding: 40px 0 20px;
+  font-family: 'Kanit', sans-serif;
+  position: relative;
+  margin-top: 60px;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* คลื่นด้านบนของ Footer */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.11,140.83,94.17,208.86,82.7Z' fill='%23641616'%3E%3C/path%3E%3C/svg%3E") center top no-repeat;
+  background-size: cover;
+}
+
+/* คอนเทนเนอร์ของ Footer */
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ส่วนติดต่อสื่อสาร */
+.footer-contact {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* รายการลิงก์ */
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* รายการแต่ละรายการ */
+.footer-list-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.footer-list-item:hover {
+  transform: translateY(-5px);
+}
+
+/* สไตล์ลิงก์ */
+.footer-link, .footer-line, .footer-email, .footer-phone {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.footer-link:hover, .footer-line:hover, .footer-email:hover, .footer-phone:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ข้อความภายในลิงก์ */
+.footer-link span, .footer-line span, .footer-email span, .footer-phone span {
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+/* สไตล์เฉพาะสำหรับไอคอนและข้อความแต่ละประเภท */
+.footer-link {
+  border: 1px solid #0056d6;
+}
+
+.footer-line {
+  border: 1px solid #00B900;
+}
+
+.footer-email {
+  border: 1px solid #ff9800;
+}
+.footer-email svg {
+  color: #ff9800;
+}
+
+.footer-phone {
+  border: 1px solid #e91e63;
+}
+.footer-phone svg {
+  color: #e91e63;
+}
+
+/* ส่วน Copyright */
+.footer-copy {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px 0;
+  width: 100%;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* เพิ่มเอฟเฟกต์เรืองแสงเมื่อโฮเวอร์ไอคอน */
+.footer-link:hover svg, .footer-line:hover svg, .footer-email:hover svg, .footer-phone:hover svg {
+  filter: drop-shadow(0 0 5px currentColor);
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Animation เพิ่มเติม */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .footer-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .footer-list-item {
+    margin-bottom: 10px;
+  }
+  
+  .footer::before {
+    height: 20px;
+    top: -10px;
+  }
+}
+
+/* ตกแต่งเพิ่มเติมเพื่อให้สอดคล้องกับ Body */
+.footer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(to right, #641616, #ff9800, #641616);
+}
+
+/* เพิ่มเอฟเฟกต์ animatioin ให้กับ copyright */
+.footer-copy span {
+  display: inline-block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

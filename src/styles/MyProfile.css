@@ -1,0 +1,225 @@
+/* MyProfile.css */
+/* สไตล์หลักสำหรับหน้าโปรไฟล์ */
+
+.profile-wrapper-custom {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-title-custom {
+  text-align: center;
+  color: #721c24;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.profile-title-custom::after {
+  content: "";
+  display: block;
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, #721c24, #dc3545);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.profile-card-custom {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card-custom:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture-custom {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #721c24;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-picture-custom:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.profile-details-custom {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 1rem;
+}
+
+.profile-details-custom label {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.profile-details-custom input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-details-custom input:focus {
+  outline: none;
+  border-color: #721c24;
+  box-shadow: 0 0 0 0.2rem rgba(114, 28, 36, 0.25);
+}
+
+.profile-details-custom input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+.btn-custom {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-edit {
+  background-color: #721c24;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #8b2832;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(139, 40, 50, 0.3);
+}
+
+.btn-save {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-save:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+/* เพิ่มลูกเล่นและการเคลื่อนไหว */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-wrapper-custom {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* ปรับแต่งสำหรับอุปกรณ์มือถือ */
+@media (max-width: 768px) {
+  .profile-wrapper-custom {
+    padding: 1rem;
+  }
+  
+  .profile-card-custom {
+    padding: 1.5rem;
+  }
+  
+  .profile-title-custom {
+    font-size: 2rem;
+  }
+  
+  .profile-picture-custom {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+/* ลูกเล่นเพิ่มเติมสำหรับสถานะ Loading */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #721c24;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* สไตล์สำหรับข้อความแจ้งเตือน */
+.alert-custom {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+  text-align: center;
+  animation: fadeInUp 0.5s ease;
+}
+
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border: 1px solid #28a745;
+  color: #28a745;
+}
+
+.alert-error {
+  background-color: rgba(220, 53, 69, 0.1);
+  border: 1px solid #dc3545;
+  color: #dc3545;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
